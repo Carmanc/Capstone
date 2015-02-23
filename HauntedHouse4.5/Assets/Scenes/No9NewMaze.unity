@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+SceneSettings:
+  m_ObjectHideFlags: 0
+  m_PVSData: 
+  m_PVSObjectsArray: []
+  m_PVSPortalsArray: []
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: .25
+    backfaceThreshold: 100
+--- !u!104 &2
+RenderSettings:
+  m_Fog: 0
+  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: .00999999978
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
+  m_HaloStrength: .5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 0}
+  m_ObjectHideFlags: 0
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
+--- !u!157 &4
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  m_LightProbes: {fileID: 0}
+  m_Lightmaps: []
+  m_LightmapsMode: 1
+  m_BakedColorSpace: 0
+  m_UseDualLightmapsInForward: 0
+  m_LightmapEditorSettings:
+    m_Resolution: 50
+    m_LastUsedResolution: 0
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
+    m_BounceBoost: 1
+    m_BounceIntensity: 1
+    m_SkyLightColor: {r: .860000014, g: .930000007, b: 1, a: 1}
+    m_SkyLightIntensity: 0
+    m_Quality: 0
+    m_Bounces: 1
+    m_FinalGatherRays: 1000
+    m_FinalGatherContrastThreshold: .0500000007
+    m_FinalGatherGradientThreshold: 0
+    m_FinalGatherInterpolationPoints: 15
+    m_AOAmount: 0
+    m_AOMaxDistance: .100000001
+    m_AOContrast: 1
+    m_LODSurfaceMappingDistance: 1
+    m_Padding: 0
+    m_TextureCompression: 0
+    m_LockAtlas: 0
+--- !u!196 &5
+NavMeshSettings:
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    agentRadius: .5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: .400000006
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    accuratePlacement: 0
+    minRegionArea: 2
+    widthInaccuracy: 16.666666
+    heightInaccuracy: 10
+  m_NavMesh: {fileID: 0}
+--- !u!1 &848268839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 848268841}
+  - 108: {fileID: 848268840}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &848268840
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848268839}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &848268841
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848268839}
+  m_LocalRotation: {x: .408217967, y: -.234569743, z: .109381683, w: .875426114}
+  m_LocalPosition: {x: 30.2013912, y: 49.5061798, z: 24.9858646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+--- !u!1 &1968447139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1968447141}
+  - 114: {fileID: 1968447140}
+  - 82: {fileID: 1968447142}
+  m_Layer: 0
+  m_Name: Maze
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1968447140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968447139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8d7246b7c7a4815bb1826b8f1b56bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Floor: {fileID: 400000, guid: 51d1d2fd55b2d489f8e9abf3dce98a4f, type: 2}
+  Player: {fileID: 400180, guid: 8804e36df18fb453c84e7626a9aea0fe, type: 2}
+  End: {fileID: 400020, guid: 2045e684f81babe4a9f69c3881eaff6f, type: 2}
+  WallUnit: {fileID: 400000, guid: cbfea6be64fbf4b749ad0c90a3513d3b, type: 2}
+  doorUnit: {fileID: 400006, guid: ecd17e41a9d0c429eb52740fda58363d, type: 2}
+  doorUnitUp: {fileID: 400006, guid: f17371920f2df46be8d2c7a1eb1e6a0c, type: 2}
+  room3By3Op1:
+  - {fileID: 400000, guid: 2d025fba449865b4f8a9184e34d2c60c, type: 2}
+  - {fileID: 400014, guid: 44cabedb54ead7241827199bb379869d, type: 2}
+  - {fileID: 400014, guid: 864d9e6b2bcdfd049a535b1926a36987, type: 2}
+  room3By3Op2:
+  - {fileID: 400014, guid: fa5dfe5fe67d8c1429c2a10cc3ebdea2, type: 2}
+  - {fileID: 400016, guid: 9028e504f7a458c44a46e927942d9e08, type: 2}
+  - {fileID: 400018, guid: a09811e73cb94f4418efaa9ea24a191f, type: 2}
+  room4By4Op1:
+  - {fileID: 400020, guid: 8fa598e40ac2ca94baa29f426c363159, type: 2}
+  - {fileID: 400102, guid: 9379d00ff596bee40bbfcf90e2b34a15, type: 2}
+  - {fileID: 400104, guid: e516b6fa402382441adca8ee9167baf2, type: 2}
+  room4By4Op2:
+  - {fileID: 400000, guid: 52020a1e9a20b1a45ad204b046507891, type: 2}
+  - {fileID: 400026, guid: 1eb42da117f9b14428fc0346d60c9c39, type: 2}
+  - {fileID: 400028, guid: a4f53fa3fa73fa1409ec113e856cf566, type: 2}
+  room4By4Op3:
+  - {fileID: 400014, guid: fa5dfe5fe67d8c1429c2a10cc3ebdea2, type: 2}
+  - {fileID: 400016, guid: 9028e504f7a458c44a46e927942d9e08, type: 2}
+  - {fileID: 400018, guid: a09811e73cb94f4418efaa9ea24a191f, type: 2}
+  room4By4Op4:
+  - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
+  - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
+  - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
+  room4By4Op5:
+  - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
+  - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
+  - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
+  room5By5Op1:
+  - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
+  - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
+  - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
+  room5By5Op2:
+  - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
+  - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
+  - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
+  room5By5Op3:
+  - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
+  - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
+  - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
+  StartRoom3x3: {fileID: 0}
+  StartRoom4x4: {fileID: 0}
+  StartRoom5x5: {fileID: 0}
+  SingleSideUnit: {fileID: 0}
+  NumberOfEnemies: 10
+  Size: {x: 40, y: 40}
+  NumberOfRooms: 6
+  Enemy1: {fileID: 400070, guid: 8d88b7fd7fdafac43a350fb345b89129, type: 2}
+  Enemy2: {fileID: 400044, guid: c70b469acfe1042c08e31477d490fd07, type: 2}
+  Enemy3: {fileID: 0}
+  roomSize: {x: 6, y: 0}
+  numberOfConnections: 2
+  numPillsToAddToMaze: 5
+--- !u!4 &1968447141
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968447139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!82 &1968447142
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968447139}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 17d12be924d8d044180091730d633679, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .119999997
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 1
+  rolloffMode: 2
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2

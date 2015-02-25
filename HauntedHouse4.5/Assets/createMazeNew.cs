@@ -45,7 +45,7 @@ public class createMazeNew : MonoBehaviour {
 	private Vector2 mazeEndPoint;
 	
 	private bool[,,] Maze;
-	private Vector3[] roomNodes;
+	private Vector3[] roomNodes;//x is x cordinate, y is y cordinate, z is size
 	private bool[,] Connection;
 	private Object usedPlayer;
 	private int[] numPillsInRoom = new int[100]; 
@@ -586,9 +586,12 @@ public class createMazeNew : MonoBehaviour {
 			
 			if(q==100)//REMOVE THIS LATER USE NOW IN CASE OF INFINITE LOOP. THIS WAY I WONT CRASH THE MACHINE ANY MORE
 			{
-				if(Maze[(int)Size.x,(int)Size.y,2]==true)
+				/*if(Maze[(int)Size.x,(int)Size.y,2]==true)
 				{
-				}
+				}*/
+				Debug.Log("Infinite Loop Error in the Path Finder");
+				break;
+
 			}
 			else{
 				q++;
@@ -714,11 +717,23 @@ public class createMazeNew : MonoBehaviour {
 				Maze[Rand1,Rand2,0]=false;
 				if(i%3==0)
 				{
-					Instantiate(Enemy2, new Vector3(Rand1*2,1,Rand2*2),Quaternion.identity);
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
+					{
+						i--;
+					}
+					else{
+						Instantiate(Enemy1, new Vector3(Rand1*2,1,Rand2*2),Quaternion.identity);
+					}
 				}
 				else
 				{
-					Instantiate(Enemy1, new Vector3(Rand1*2,1,Rand2*2),Quaternion.identity);
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
+					{
+						i--;
+					}
+					else{
+						Instantiate(Enemy1, new Vector3(Rand1*2,1,Rand2*2),Quaternion.identity);
+					}
 				}
 			}
 			else{

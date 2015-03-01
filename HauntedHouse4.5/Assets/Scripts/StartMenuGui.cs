@@ -2,7 +2,12 @@
 using System.Collections;
 
 public class StartMenuGui : MonoBehaviour {
-
+	private bool reset = false;
+	void start()
+	{
+		GameTimer.Instance.resetTimers();
+		//reset=false;
+	}
 	void OnGUI()
 	{
 		//							Left			Top				Width			Hight
@@ -19,4 +24,13 @@ public class StartMenuGui : MonoBehaviour {
 			Application.LoadLevel(4);
 		}
 	}
+	/*void update()
+	{
+		if(!reset)
+		{
+			resetTimers();
+			GameTimer.Instance.reset=true;
+		}
+	}*/
+
 }

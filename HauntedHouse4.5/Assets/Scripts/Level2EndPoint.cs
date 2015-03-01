@@ -15,16 +15,16 @@ public class Level2EndPoint : MonoBehaviour {
 	void OnCollisionEnter(Collision col) {
 		if(col.gameObject.tag == "Player")
 		{
-			Debug.Log("isWorking");
-			//Application.LoadLevel(3);
+			//Debug.Log("isWorking");
+			Application.LoadLevel(3);
 		}
 		
 	}
 	void OnTriggerEnter(Collider col) {
 		if(col.gameObject.tag == "Player")
 		{
-			Debug.Log("isWorking2");
-			//Application.LoadLevel(3);
+			//Debug.Log("isWorking2");
+			Application.LoadLevel(3);
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class createMazeNew : MonoBehaviour {
 
+	public int levelNumber;
 	public Transform Floor;
 	public Transform Player;
 	//public GameObject Player;
@@ -653,6 +654,17 @@ public class createMazeNew : MonoBehaviour {
 		Instantiate(End, new Vector3((mazeEndPoint.x*2),2,(mazeEndPoint.y*2)),Quaternion.identity);
 		insertEnemies();
 		insertFurniture();
+		if(levelNumber==1)
+		{
+			GameTimer.Instance.setStart1(DateTime.Now);
+		}
+		else if(levelNumber==2)
+		{
+			GameTimer.Instance.setStart2(DateTime.Now);
+		}
+		else{
+			GameTimer.Instance.setStart3(DateTime.Now);
+		}
 		
 	}
 	void insertFurniture()

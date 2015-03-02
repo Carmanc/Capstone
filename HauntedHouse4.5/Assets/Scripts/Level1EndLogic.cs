@@ -16,7 +16,8 @@ public class Level1EndLogic : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			//Debug.Log("isWorking");
-			GameTimer.Instance.setEnd1(DateTime.Now);
+			double temp =System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setEnd1(temp);
 
 			Application.LoadLevel(3);
 
@@ -27,7 +28,8 @@ public class Level1EndLogic : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			//Debug.Log("isWorking2");
-			GameTimer.Instance.setEnd1(DateTime.Now);
+			double temp =System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setEnd1(temp);
 
 			Application.LoadLevel(3);
 

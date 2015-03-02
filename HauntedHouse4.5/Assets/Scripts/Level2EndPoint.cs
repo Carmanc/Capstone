@@ -16,7 +16,8 @@ public class Level2EndPoint : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			//Debug.Log("isWorking");
-			GameTimer.Instance.setEnd2(DateTime.Now);
+			double temp =System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setEnd2(temp);
 			Application.LoadLevel(3);
 		}
 		
@@ -25,7 +26,8 @@ public class Level2EndPoint : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			//Debug.Log("isWorking2");
-			GameTimer.Instance.setEnd2(DateTime.Now);
+			double temp =System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setEnd2(temp);
 			Application.LoadLevel(3);
 		}
 	}

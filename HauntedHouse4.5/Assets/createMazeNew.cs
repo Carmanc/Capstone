@@ -656,14 +656,17 @@ public class createMazeNew : MonoBehaviour {
 		insertFurniture();
 		if(levelNumber==1)
 		{
-			GameTimer.Instance.setStart1(DateTime.Now);
+			double temp = System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setStart1(temp);
 		}
 		else if(levelNumber==2)
 		{
-			GameTimer.Instance.setStart2(DateTime.Now);
+			double temp = System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setStart2(temp);
 		}
 		else{
-			GameTimer.Instance.setStart3(DateTime.Now);
+			double temp = System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setStart3(temp);
 		}
 		
 	}

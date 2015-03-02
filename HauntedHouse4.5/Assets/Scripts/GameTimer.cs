@@ -14,12 +14,13 @@ public class GameTimer : MonoBehaviour {
 	private double timerEnd3;
 	//Construct  
 	private GameTimer(){
-		timerStart1=0;
-	    timerEnd1=0;
-		timerStart2=0;
-		timerEnd2=0;
-		timerStart3=0;
-		timerEnd3=0;
+
+		timerStart1=1111.2003697453;
+		timerEnd1=3332.2221531351;
+		timerStart2=1111.2003697453;
+		timerEnd2=3332.2221531351;
+		timerStart3=1111.2003697453;
+		timerEnd3=3332.2221531351;
 	}
 	
 	//  Instance 
@@ -96,14 +97,29 @@ public class GameTimer : MonoBehaviour {
 	}
 	public double getCompletion1Time()
 	{
-		return (timerStart1-timerEnd1);
+		double temp = (timerEnd1-timerStart1)/1000;
+		return round(temp, 2);
 	}
 	public double getCompletion2Time()
 	{
-		return (timerStart2-timerEnd2);
+		double temp = (timerEnd2-timerStart2)/1000;
+		return round(temp, 2);
 	}
 	public double getCompletion3Time()
 	{
-		return (timerStart3-timerEnd3);
+		double temp = (timerEnd3-timerStart3)/1000;
+		return round(temp, 2);
+	}
+	double round(double a, int decimalPlaces)
+	{
+		double powerTen = 1;
+		for (int i=0; i<decimalPlaces; i++)
+		{
+			powerTen=powerTen*10;
+			//Debug.Log(powerTen);
+		}
+		int temp2 = ((int)(a*powerTen));
+		double temp = ((double)temp2/powerTen);
+		return temp;
 	}
 }

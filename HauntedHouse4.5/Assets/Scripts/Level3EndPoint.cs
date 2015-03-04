@@ -14,16 +14,20 @@ public class Level3EndPoint : MonoBehaviour {
 	void OnCollisionEnter(Collision col) {
 		if(col.gameObject.tag == "Player")
 		{
-			Debug.Log("isWorking");
-			//Application.LoadLevel(3);
+			//Debug.Log("isWorking");
+			double temp =System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setEnd3(temp);
+			Application.LoadLevel(3);
 		}
 		
 	}
 	void OnTriggerEnter(Collider col) {
 		if(col.gameObject.tag == "Player")
 		{
-			Debug.Log("isWorking2");
-			//Application.LoadLevel(3);
+			//Debug.Log("isWorking2");
+			double temp =System.DateTime.Now.Millisecond;
+			GameTimer.Instance.setEnd3(temp);
+			Application.LoadLevel(3);
 		}
 	}
 }

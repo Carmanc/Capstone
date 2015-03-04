@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyTriggerCounter : MonoBehaviour {
 
 	private int countTrigger;
+	private static EnemyTriggerCounter _instance;
 
 	private EnemyTriggerCounter()
 	{

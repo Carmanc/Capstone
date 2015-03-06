@@ -47,7 +47,7 @@ public class PauseScript : MonoBehaviour {
 			{
 
 				Time.timeScale = 0;
-				if(SettingsSingleton.Instance.getVolume()!=volumeSetting)
+				if(volumeSetting!=SettingsSingleton.Instance.getVolume())
 				{
 					SettingsSingleton.Instance.changeVolume(volumeSetting);
 				}

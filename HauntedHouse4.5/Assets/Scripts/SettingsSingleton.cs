@@ -6,10 +6,12 @@ public class SettingsSingleton : MonoBehaviour {
 	private static SettingsSingleton _instance;
 	private float vol;//Volume Controle;
 	private float sen;//Mouse sensitivity;
+	private bool Pause;
 	//Construct  
 	private SettingsSingleton(){
 		vol=0.5f;
 		sen=0.5f;
+		Pause=false;
 	}
 
 	//  Instance 
@@ -68,5 +70,13 @@ public class SettingsSingleton : MonoBehaviour {
 	public float getSensitivity()
 	{
 		return sen;
+	}
+	public void changePause()
+	{
+		Pause=!Pause;
+	}
+	public bool getPause()
+	{
+		return Pause;
 	}
 }

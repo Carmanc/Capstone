@@ -15,12 +15,12 @@ public class GameTimer : MonoBehaviour {
 	//Construct  
 	private GameTimer(){
 
-		timerStart1=1111.2003697453;
-		timerEnd1=3332.2221531351;
-		timerStart2=1111.2003697453;
-		timerEnd2=3332.2221531351;
-		timerStart3=1111.2003697453;
-		timerEnd3=3332.2221531351;
+		timerStart1=0;
+		timerEnd1=0;
+		timerStart2=0;
+		timerEnd2=0;
+		timerStart3=0;
+		timerEnd3=0;
 	}
 	
 	//  Instance 

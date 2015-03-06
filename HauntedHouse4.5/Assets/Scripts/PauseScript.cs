@@ -7,8 +7,13 @@ public class PauseScript : MonoBehaviour {
 	//float shadeSetting=5.0f;
 	float volumeSetting=SettingsSingleton.Instance.getVolume();
 	float mouseSetting=SettingsSingleton.Instance.getSensitivity();
-
+	Component cameraScript;
 	
+	void Start()
+	{
+		//cameraScript=GetComponent(FirstPersonController) as FirstPersonController;
+	}
+
 	void OnGUI()
 	{
 		if(isPause)
@@ -20,7 +25,12 @@ public class PauseScript : MonoBehaviour {
 			volumeSetting=GUI.HorizontalSlider(new Rect(Screen.width/3.5f,(Screen.height/2)-30,Screen.width/2,Screen.height/10),volumeSetting,0.0f,1.0f);
 			GUI.Label(new Rect(Screen.width/3.5f,(Screen.height/2)-80,Screen.width/2,Screen.height/10),"Moue Sensitivity");
 			mouseSetting=GUI.HorizontalSlider(new Rect(Screen.width/3.5f,(Screen.height/2)-60,Screen.width/2,Screen.height/10),mouseSetting,0.0f,10.0f);
-			
+			if(GUI.Button(new Rect(Screen.width/3.5f,(Screen.height/2)+10,Screen.width/2,Screen.height/10),"Resume"))
+			{
+				isPause = !isPause;
+				SettingsSingleton.Instance.getPause();
+				Time.timeScale = 1;
+			}
 			
 		}
 	}
@@ -32,9 +42,19 @@ public class PauseScript : MonoBehaviour {
 		if( Input.GetKeyDown(KeyCode.Space))
 		{
 			isPause = !isPause;
-			if(isPause)
+			SettingsSingleton.Instance.changePause();
+			if(SettingsSingleton.Instance.getPause())
 			{
+
 				Time.timeScale = 0;
+				if(SettingsSingleton.Instance.getVolume()!=volumeSetting)
+				{
+					SettingsSingleton.Instance.changeVolume(volumeSetting);
+				}
+				if(mouseSetting!=SettingsSingleton.Instance.getSensitivity())
+				{
+					SettingsSingleton.Instance.changeSensitivity(mouseSetting);
+				}
 			}
 			else
 			{

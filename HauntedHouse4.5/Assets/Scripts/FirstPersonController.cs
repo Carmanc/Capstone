@@ -24,17 +24,29 @@ public class FirstPersonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(!SettingsSingleton.Instance.getPause())
+		{
+			notPaused();
+		}
+
+			mouseSensitivity=SettingsSingleton.Instance.getSensitivity();
+
+		}
+	void notPaused()
+	{
 		// Rotation
+
 		
 		float rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
 		transform.Rotate(0, rotLeftRight, 0);
-
+		
 		
 		verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 		verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
 		Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 		
-
+		
 		// Movement
 		
 		float forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;

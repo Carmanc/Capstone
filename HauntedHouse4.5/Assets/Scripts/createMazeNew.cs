@@ -737,7 +737,7 @@ public class createMazeNew : MonoBehaviour {
 						i--;
 					}
 					else{
-						Instantiate(Enemy1, new Vector3(Rand1*2,1,Rand2*2),Quaternion.identity);
+						Instantiate(Enemy1, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
 					}
 				}
 				else
@@ -747,7 +747,7 @@ public class createMazeNew : MonoBehaviour {
 						i--;
 					}
 					else{
-						Instantiate(Enemy1, new Vector3(Rand1*2,1,Rand2*2),Quaternion.identity);
+						Instantiate(Enemy1, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
 					}
 				}
 			}

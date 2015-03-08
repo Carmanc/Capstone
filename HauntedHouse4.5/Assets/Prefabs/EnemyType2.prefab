@@ -1765,7 +1765,7 @@ Animation:
   - {fileID: 7400012, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   - {fileID: 7400014, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!111 &11100008
@@ -1790,14 +1790,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9333371d3ad744ab2a8ad244bb3b17c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 69fc93482a264d4458b6c343b06fc24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  chaseRange: 5
-  attackRange: 3
+  chaseRange: 8
+  attackRange: 2
   controller: {fileID: 14300000}
-  player: {fileID: 400180, guid: 8804e36df18fb453c84e7626a9aea0fe, type: 2}
+  player: {fileID: 400168, guid: b952388a9143b17488087c92c723983e, type: 2}
   run: {fileID: 7400004, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   idle: {fileID: 7400002, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   attack: {fileID: 7400008, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47a2eace12404d0bb5b617fcd7462e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 80194009661c5a14b920e3f15ac612c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 200
@@ -1823,7 +1823,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e731948d05541c1b059cdeda7fe655, type: 3}
+  m_Script: {fileID: 11500000, guid: fdd0179e180e87a49bdb0908cac45c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 0

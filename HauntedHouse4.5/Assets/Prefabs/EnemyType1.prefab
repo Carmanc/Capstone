@@ -544,13 +544,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 400070}
   - 111: {fileID: 11100002}
-  - 114: {fileID: 11400000}
   - 143: {fileID: 14300000}
+  - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
   - 23: {fileID: 2300002}
+  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 54: {fileID: 5400000}
   m_Layer: 0
   m_Name: EnemyType1
   m_TagString: Enemy

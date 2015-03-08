@@ -26,39 +26,39 @@ public class CongradulationsScreen : MonoBehaviour {
 	{
 		//Currently The rankings will be everybody gets a rank of monster Buster
 		double temp = GameTimer.Instance.getCompletion1Time() + GameTimer.Instance.getCompletion2Time() + GameTimer.Instance.getCompletion3Time();
-		if(temp < 15)
+		if(temp < (15*60))
 		{
 			return "Monster Buster";
 		}
-		else if(temp < 20)
+		else if(temp < (20*60))
 		{
 			return "Monster Hunter";
 		}
-		else if(temp < 25)
+		else if(temp < (25*60))
 		{
 			return "Ghost Buster";
 		}
-		else if(temp < 30)
+		else if(temp < (30*60))
 		{
 			return "Ghost Hunter";
 		}
-		else if(temp < 35)
+		else if(temp < (35*60))
 		{
 			return "Ghost Seeker";
 		}
-		else if(temp < 40)
+		else if(temp < (40*60))
 		{
 			return "Ghost adventurer";
 		}
-		else if(temp < 45)
+		else if(temp < (45*60))
 		{
 			return "Adult with a camcorder";
 		}
-		else if(temp < 50)
+		else if(temp < (50*60))
 		{
 			return "kid with a camcorder";
 		}
-		else if(temp < 55)
+		else if(temp < (55*60))
 		{
 			return "Completly Lost";
 		}

@@ -25,12 +25,38 @@ public class FirstPersonController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(!SettingsSingleton.Instance.getPause())
+		/*if(!SettingsSingleton.Instance.getPause())
 		{
 			notPaused();
 		}
 
-			mouseSensitivity=SettingsSingleton.Instance.getSensitivity();
+			mouseSensitivity=SettingsSingleton.Instance.getSensitivity();*/
+		float rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
+		transform.Rotate(0, rotLeftRight, 0);
+		
+		
+		verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+		verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
+		Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+		
+		
+		// Movement
+		
+		float forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;
+		float sideSpeed = Input.GetAxis("Horizontal") * movementSpeed;
+		
+		verticalVelocity += Physics.gravity.y * Time.deltaTime;
+		
+		if( characterController.isGrounded && Input.GetButton("Jump") ) {
+			verticalVelocity = jumpSpeed;
+		}
+		
+		Vector3 speed = new Vector3( sideSpeed, verticalVelocity, forwardSpeed );
+		
+		speed = transform.rotation * speed;
+		
+		
+		characterController.Move( speed * Time.deltaTime );
 
 		}
 	void notPaused()

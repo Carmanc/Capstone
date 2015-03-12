@@ -5,7 +5,7 @@ using System.Collections;
 public class FirstPersonController : MonoBehaviour {
 	
 	public float movementSpeed = 5.0f;
-	public float mouseSensitivity = /*5.0f*/SettingsSingleton.Instance.getSensitivity();
+	public float mouseSensitivity = 5.0f/*SettingsSingleton.Instance.getSensitivity()*/;
 	public float jumpSpeed = 20.0f;
 	
 	float verticalRotation = 0;
@@ -19,19 +19,21 @@ public class FirstPersonController : MonoBehaviour {
 	void Start () {
 		Screen.lockCursor = true;
 		characterController = GetComponent<CharacterController>();
+		mouseSensitivity=SettingsSingleton.Instance.getSensitivity();
 		//audio.Play();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		/*if(!SettingsSingleton.Instance.getPause())
+	if(!SettingsSingleton.Instance.getPause())
 		{
 			notPaused();
 		}
-
-			mouseSensitivity=SettingsSingleton.Instance.getSensitivity();*/
-		float rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
+	else{
+			mouseSensitivity=SettingsSingleton.Instance.getSensitivity();
+		}
+		/*float rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
 		transform.Rotate(0, rotLeftRight, 0);
 		
 		
@@ -56,7 +58,7 @@ public class FirstPersonController : MonoBehaviour {
 		speed = transform.rotation * speed;
 		
 		
-		characterController.Move( speed * Time.deltaTime );
+		characterController.Move( speed * Time.deltaTime );*/
 
 		}
 	void notPaused()

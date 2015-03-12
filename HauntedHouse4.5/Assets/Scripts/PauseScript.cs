@@ -14,6 +14,18 @@ public class PauseScript : MonoBehaviour {
 		//cameraScript=GetComponent(FirstPersonController) as FirstPersonController;
 	}
 
+	void Pause()
+	{
+		Time.timeScale = 0;
+		isPause = true;
+		SettingsSingleton.Instance.pauseTrue();
+	}
+	void unPause()
+	{
+		Time.timeScale = 1;
+		isPause = false;
+		SettingsSingleton.Instance.pauseFalse();
+	}
 	void OnGUI()
 	{
 		if(isPause)
@@ -24,12 +36,10 @@ public class PauseScript : MonoBehaviour {
 			GUI.Label(new Rect(Screen.width/3.5f,(Screen.height/2)-50,Screen.width/2,Screen.height/10),"Volume");
 			volumeSetting=GUI.HorizontalSlider(new Rect(Screen.width/3.5f,(Screen.height/2)-30,Screen.width/2,Screen.height/10),volumeSetting,0.0f,1.0f);
 			GUI.Label(new Rect(Screen.width/3.5f,(Screen.height/2)-80,Screen.width/2,Screen.height/10),"Moue Sensitivity");
-			mouseSetting=GUI.HorizontalSlider(new Rect(Screen.width/3.5f,(Screen.height/2)-60,Screen.width/2,Screen.height/10),mouseSetting,0.0f,10.0f);
+			mouseSetting=GUI.HorizontalSlider(new Rect(Screen.width/3.5f,(Screen.height/2)-60,Screen.width/2,Screen.height/10),mouseSetting,1.0f,10.0f);
 			if(GUI.Button(new Rect(Screen.width/3.5f,(Screen.height/2)+10,Screen.width/2,Screen.height/10),"Resume"))
 			{
-				isPause = !isPause;
-				SettingsSingleton.Instance.getPause();
-				Time.timeScale = 1;
+				unPause();
 			}
 			
 		}
@@ -41,25 +51,29 @@ public class PauseScript : MonoBehaviour {
 	void Update () {
 		if( Input.GetKeyDown(KeyCode.Space))
 		{
-			isPause = !isPause;
-			SettingsSingleton.Instance.changePause();
-			if(SettingsSingleton.Instance.getPause())
+			if(isPause)
 			{
-
-				Time.timeScale = 0;
-				if(volumeSetting!=SettingsSingleton.Instance.getVolume())
-				{
-					SettingsSingleton.Instance.changeVolume(volumeSetting);
-				}
-				if(mouseSetting!=SettingsSingleton.Instance.getSensitivity())
-				{
-					SettingsSingleton.Instance.changeSensitivity(mouseSetting);
-				}
+				unPause();
 			}
 			else
 			{
-				Time.timeScale = 1;
+				Pause();
 			}
+
+		}
+		if(isPause)//SettingsSingleton.Instance.getPause())
+		{
+			
+			
+			if(volumeSetting!=SettingsSingleton.Instance.getVolume())
+			{
+				SettingsSingleton.Instance.changeVolume(volumeSetting);
+			}
+			if(mouseSetting!=SettingsSingleton.Instance.getSensitivity())
+			{
+				SettingsSingleton.Instance.changeSensitivity(mouseSetting);
+			}
+			//SettingsSingleton.Instance.applySound();
 		}
 
 	}

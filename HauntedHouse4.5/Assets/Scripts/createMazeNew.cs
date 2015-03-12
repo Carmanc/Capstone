@@ -61,6 +61,7 @@ public class createMazeNew : MonoBehaviour {
 		setUpPills();
 		CreateBoolMaze();
 		CreateGrid();
+		SettingsSingleton.Instance.applySound();
 	}
 	
 	void CreateBoolMaze()

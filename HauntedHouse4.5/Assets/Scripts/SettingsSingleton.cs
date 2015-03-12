@@ -10,10 +10,13 @@ public class SettingsSingleton : MonoBehaviour {
 	//Construct  
 	private SettingsSingleton(){
 		vol=0.5f;
-		sen=0.5f;
+		sen=1.0f;
 		Pause=false;
 	}
-
+	public void applySound()
+	{
+		AudioListener.volume=vol;
+	}
 	//  Instance 
 	public static SettingsSingleton Instance
 	{
@@ -49,6 +52,8 @@ public class SettingsSingleton : MonoBehaviour {
 		if(newVolume>=0 && newVolume<=1)
 		{
 			vol=newVolume;
+			applySound();
+
 			return true;
 		}
 		return false;
@@ -71,12 +76,17 @@ public class SettingsSingleton : MonoBehaviour {
 	{
 		return sen;
 	}
-	public void changePause()
+	public void pauseTrue()
 	{
-		Pause=!Pause;
+		Pause=true;
+	}
+	public void pauseFalse()
+	{
+		Pause=false;
 	}
 	public bool getPause()
 	{
 		return Pause;
 	}
+
 }

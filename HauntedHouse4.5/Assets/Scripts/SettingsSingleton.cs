@@ -12,6 +12,7 @@ public class SettingsSingleton : MonoBehaviour {
 		vol=0.5f;
 		sen=1.0f;
 		Pause=false;
+		applySound();
 	}
 	public void applySound()
 	{

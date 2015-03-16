@@ -6,6 +6,8 @@ public class StartMenuGui : MonoBehaviour {
 	void start()
 	{
 		GameTimer.Instance.resetTimers();
+
+		//Screen.showCursor = true;
 		//reset=false;
 	}
 	void OnGUI()
@@ -21,16 +23,20 @@ public class StartMenuGui : MonoBehaviour {
 		}
 		if(GUI.Button(new Rect(Screen.width/3.5f,Screen.height/5,Screen.width/2,Screen.height/10),"Start"))
 		{
+			Screen.showCursor = false;
 			Application.LoadLevel(4);
 		}
 	}
-	/*void update()
+	void update()
 	{
-		if(!reset)
+		Screen.lockCursor = true;
+		Screen.showCursor = false;
+		/*if(!reset)
 		{
 			resetTimers();
 			GameTimer.Instance.reset=true;
-		}
-	}*/
+
+		}*/
+	}
 
 }

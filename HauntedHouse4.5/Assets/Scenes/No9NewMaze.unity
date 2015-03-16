@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNumber: 1
   Floor: {fileID: 400000, guid: 51d1d2fd55b2d489f8e9abf3dce98a4f, type: 2}
-  Player: {fileID: 400168, guid: b952388a9143b17488087c92c723983e, type: 2}
+  Player: {fileID: 400144, guid: af6844a82b55d4950a45bf54d7774746, type: 2}
   End: {fileID: 400020, guid: 2045e684f81babe4a9f69c3881eaff6f, type: 2}
   WallUnit: {fileID: 400000, guid: cbfea6be64fbf4b749ad0c90a3513d3b, type: 2}
   doorUnit: {fileID: 400006, guid: 21b08df821ac866489c28eea7eaa7ddc, type: 2}
@@ -256,12 +256,12 @@ MonoBehaviour:
   StartRoom4x4: {fileID: 0}
   StartRoom5x5: {fileID: 0}
   SingleSideUnit: {fileID: 0}
-  NumberOfEnemies: 3
+  NumberOfEnemies: 7
   Size: {x: 40, y: 40}
   NumberOfRooms: 6
-  Enemy1: {fileID: 400024, guid: 0a12762a3a818473c877b6142f53bd5e, type: 2}
+  Enemy1: {fileID: 400072, guid: 39213448fa0844825a6478fa7f9e9775, type: 2}
   Enemy2: {fileID: 400024, guid: 0a12762a3a818473c877b6142f53bd5e, type: 2}
-  Enemy3: {fileID: 400024, guid: 0a12762a3a818473c877b6142f53bd5e, type: 2}
+  Enemy3: {fileID: 400072, guid: 39213448fa0844825a6478fa7f9e9775, type: 2}
   roomSize: {x: 6, y: 0}
   numberOfConnections: 2
   numPillsToAddToMaze: 5

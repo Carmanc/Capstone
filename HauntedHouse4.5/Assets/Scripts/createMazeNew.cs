@@ -79,7 +79,7 @@ public class createMazeNew : MonoBehaviour {
 		}
 		
 		roomNodes = new Vector3[NumberOfRooms];
-		Random.seed=42;
+		//Random.seed=42;
 		int Rand1;
 		int Rand2;
 		int Rand3;

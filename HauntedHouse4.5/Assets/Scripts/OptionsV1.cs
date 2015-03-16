@@ -32,6 +32,9 @@ public class OptionsV1 : MonoBehaviour {
 
 	}
 	void Start(){
+		//Screen.showCursor = true;
+		//Screen.lockCursor = true;
+		//Screen.showCursor = false;
 
 		volumeSetting=SettingsSingleton.Instance.getVolume();
 

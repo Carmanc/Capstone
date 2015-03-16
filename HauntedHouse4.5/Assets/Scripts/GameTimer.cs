@@ -97,17 +97,17 @@ public class GameTimer : MonoBehaviour {
 	}
 	public double getCompletion1Time()
 	{
-		double temp = (timerEnd1-timerStart1)/1000;
+		double temp = (timerEnd1-timerStart1)/*/1000*/;
 		return round(temp, 2);
 	}
 	public double getCompletion2Time()
 	{
-		double temp = (timerEnd2-timerStart2)/1000;
+		double temp = (timerEnd2-timerStart2)/*/1000*/;
 		return round(temp, 2);
 	}
 	public double getCompletion3Time()
 	{
-		double temp = (timerEnd3-timerStart3)/1000;
+		double temp = (timerEnd3-timerStart3)/*/1000*/;
 		return round(temp, 2);
 	}
 	double round(double a, int decimalPlaces)

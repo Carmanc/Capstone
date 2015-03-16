@@ -16,15 +16,24 @@ public class PauseScript : MonoBehaviour {
 
 	void Pause()
 	{
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
 		Time.timeScale = 0;
 		isPause = true;
 		SettingsSingleton.Instance.pauseTrue();
+
+
+		//Screen.showCursor = true;
 	}
 	void unPause()
 	{
+		Screen.lockCursor = true;
+		Screen.showCursor = false;
 		Time.timeScale = 1;
 		isPause = false;
 		SettingsSingleton.Instance.pauseFalse();
+
+		//Screen.showCursor = true;
 	}
 	void OnGUI()
 	{

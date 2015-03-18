@@ -233,13 +233,13 @@ MonoBehaviour:
   - {fileID: 400016, guid: 9028e504f7a458c44a46e927942d9e08, type: 2}
   - {fileID: 400018, guid: a09811e73cb94f4418efaa9ea24a191f, type: 2}
   room4By4Op4:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  room4By4Op5:
   - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
   - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
   - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
+  room4By4Op5:
+  - {fileID: 400020, guid: 8fa598e40ac2ca94baa29f426c363159, type: 2}
+  - {fileID: 400102, guid: 9379d00ff596bee40bbfcf90e2b34a15, type: 2}
+  - {fileID: 400104, guid: e516b6fa402382441adca8ee9167baf2, type: 2}
   room5By5Op1:
   - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
   - {fileID: 400160, guid: 5eb5cc8993401dc44ba945af09915f66, type: 2}
@@ -249,9 +249,9 @@ MonoBehaviour:
   - {fileID: 400102, guid: 9379d00ff596bee40bbfcf90e2b34a15, type: 2}
   - {fileID: 400104, guid: e516b6fa402382441adca8ee9167baf2, type: 2}
   room5By5Op3:
-  - {fileID: 400158, guid: a7024e68b3b980943925da0f2de78ab0, type: 2}
+  - {fileID: 400014, guid: fa5dfe5fe67d8c1429c2a10cc3ebdea2, type: 2}
   - {fileID: 400026, guid: 1eb42da117f9b14428fc0346d60c9c39, type: 2}
-  - {fileID: 400018, guid: a09811e73cb94f4418efaa9ea24a191f, type: 2}
+  - {fileID: 400162, guid: 870b15870d3fdbd4593dfde8050181a8, type: 2}
   StartRoom3x3: {fileID: 0}
   StartRoom4x4: {fileID: 0}
   StartRoom5x5: {fileID: 0}
@@ -260,8 +260,8 @@ MonoBehaviour:
   Size: {x: 40, y: 40}
   NumberOfRooms: 6
   Enemy1: {fileID: 400072, guid: 39213448fa0844825a6478fa7f9e9775, type: 2}
-  Enemy2: {fileID: 400024, guid: 0a12762a3a818473c877b6142f53bd5e, type: 2}
-  Enemy3: {fileID: 400072, guid: 39213448fa0844825a6478fa7f9e9775, type: 2}
+  Enemy2: {fileID: 400022, guid: c461c5246144142ddb57b3f966689779, type: 2}
+  Enemy3: {fileID: 400024, guid: 0a12762a3a818473c877b6142f53bd5e, type: 2}
   roomSize: {x: 6, y: 0}
   numberOfConnections: 2
   numPillsToAddToMaze: 5

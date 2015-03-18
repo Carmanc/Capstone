@@ -64,7 +64,7 @@ public class PlayerHealthBar : MonoBehaviour {
 		} else 
 		{
 			//print ("game over");
-			Application.LoadLevel(7);
+			Application.LoadLevel(3);
 		}
 	
 
@@ -89,7 +89,7 @@ public class PlayerHealthBar : MonoBehaviour {
 						currentLife += lifeCount;
 				} else {
 			//currentHealth = 0;
-			Application.LoadLevel(7);
+			Application.LoadLevel(3);
 				}
 		//hbLength = (Screen.width / 2) * (currentHealth / (float)maxHealth);
 

@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerHealthBar : MonoBehaviour {
 
 	//public PlayerLogic player;
+	private int gameOver=2;
 	public Texture2D frame;
 	public Rect framePosition;
 
@@ -48,7 +49,7 @@ public class PlayerHealthBar : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Box (new Rect(Screen.width * 0.5f, Screen.height * 0.1f, hbLength, 25), currentHealth + " / " + maxHealth);
+		//GUI.Box (new Rect(Screen.width * 0.5f, Screen.height * 0.1f, hbLength, 25), currentHealth + " / " + maxHealth);
 		drawFrame ();
 		drawBar ();
 	}
@@ -64,7 +65,7 @@ public class PlayerHealthBar : MonoBehaviour {
 		} else 
 		{
 			//print ("game over");
-			Application.LoadLevel(3);
+			Application.LoadLevel(gameOver);
 		}
 	
 
@@ -89,7 +90,7 @@ public class PlayerHealthBar : MonoBehaviour {
 						currentLife += lifeCount;
 				} else {
 			//currentHealth = 0;
-			Application.LoadLevel(3);
+			Application.LoadLevel(gameOver);
 				}
 		//hbLength = (Screen.width / 2) * (currentHealth / (float)maxHealth);
 

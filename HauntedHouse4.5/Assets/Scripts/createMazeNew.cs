@@ -224,8 +224,8 @@ public class createMazeNew : MonoBehaviour {
 					{
 						if(Maze[(int)roomNodes[i].x+j,(int)roomNodes[i].y+k,0]==true && Maze[(int)roomNodes[i].x+j,(int)roomNodes[i].y+k,1]==false)
 						{
-							Instantiate(doorUnit, new Vector3((roomNodes[i].x + j)*2-1,(float)-0.5,(roomNodes[i].y + k)*2),Quaternion.Euler(0,90,0));
-							//Instantiate(doorUnit, new Vector3((roomNodes[i].x + j)*2-1,(float)-0.5,(roomNodes[i].y + k)*2),Quaternion.identity);
+							Instantiate(doorUnitUp, new Vector3((roomNodes[i].x + j)*2-0,(float)-0.5,(roomNodes[i].y + k)*2),Quaternion.Euler(0,270,0));
+							//Instantiate(doorUnitUp, new Vector3((roomNodes[i].x + j)*2-1,(float)-0.5,(roomNodes[i].y + k)*2),Quaternion.identity);
 						}
 					}
 					if(k==2)
@@ -731,7 +731,7 @@ public class createMazeNew : MonoBehaviour {
 			if(Maze[Rand1,Rand2,0]==true)
 			{
 				Maze[Rand1,Rand2,0]=false;
-				if(i%3==0)
+				if(i%4==0)
 				{
 					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
 					{
@@ -741,6 +741,16 @@ public class createMazeNew : MonoBehaviour {
 						Instantiate(Enemy1, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
 					}
 				}
+				else if(i%3==0)
+				{
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
+					{
+						i--;
+					}
+					else{
+						Instantiate(Enemy2, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
+					}
+				}
 				else
 				{
 					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
@@ -748,7 +758,7 @@ public class createMazeNew : MonoBehaviour {
 						i--;
 					}
 					else{
-						Instantiate(Enemy1, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
+						Instantiate(Enemy3, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
 					}
 				}
 			}

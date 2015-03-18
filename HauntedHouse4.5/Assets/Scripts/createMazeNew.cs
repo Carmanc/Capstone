@@ -805,6 +805,76 @@ public class createMazeNew : MonoBehaviour {
 			}
 			else
 			{
+				numPillsInRoom[i]=(int)((int)(Random.value)*1000)%3;
+				pills=pills+numPillsInRoom[i];
+			}
+		}
+		if(pills!=numPillsToAddToMaze)
+		{
+			int errorInDistibution = pills - numPillsToAddToMaze;
+			while(errorInDistibution !=0)
+			{
+				if(errorInDistibution > 0)
+				{
+					for( int i=1; i < (NumberOfRooms-1); i++)
+					{
+						if(numPillsInRoom[i]!=0)
+						{
+							numPillsInRoom[i]--;
+							errorInDistibution--;
+						}
+						if(errorInDistibution==0)
+						{
+							return;
+						}
+					}
+				}
+				else{
+					for( int i=1; i < (NumberOfRooms-1); i++)
+					{
+						if(numPillsInRoom[i]!=2)
+						{
+							numPillsInRoom[i]++;
+							errorInDistibution++;
+						}
+						if(errorInDistibution==0)
+						{
+							return;
+						}
+					}
+				}
+				for( int i=1; i < (NumberOfRooms-1); i++)
+				{
+					int max=0;
+					int min=0;
+					if(numPillsInRoom[i]==0)
+					{
+						min++;
+					}
+					if(numPillsInRoom[i]==2)
+					{
+						max++;
+					}
+					if(min >= NumberOfRooms-2)
+					{
+						return;
+					}
+					if(max >= NumberOfRooms-2)
+					{
+						return;
+					}
+				}
+			}
+		}
+
+		/*for( int i=0; i < (NumberOfRooms-1); i++)
+		{
+			if(i==0)
+			{
+				numPillsInRoom[i]=0;
+			}
+			else
+			{
 				if(roomsLeftToFill/numPillsToAddToMaze>1)
 				{
 					if(roomsLeftToFill/numPillsToAddToMaze>=2)
@@ -854,7 +924,7 @@ public class createMazeNew : MonoBehaviour {
 				}
 				roomsLeftToFill=roomsLeftToFill-1;
 			}
-		}
+		}*/
 		//int pills= (int)((0+(Random.value*1000))%3);
 	}
 	int NumPillsToAddToRoom(int roomNumber){

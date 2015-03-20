@@ -728,12 +728,14 @@ public class createMazeNew : MonoBehaviour {
 			Rand1= (int)((Random.value * Size.x)%Size.x);
 			Rand2= (int) ((Random.value * Size.y)%Size.y);
 			//Debug.Log(i);
+			//NumberOfRooms
+			//roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2
 			if(Maze[Rand1,Rand2,0]==true)
 			{
 				Maze[Rand1,Rand2,0]=false;
 				if(i%3==0)
 				{
-					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2 && roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2)
 					{
 						i--;
 					}

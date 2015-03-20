@@ -727,6 +727,7 @@ public class createMazeNew : MonoBehaviour {
 		{
 			Rand1= (int)((Random.value * Size.x)%Size.x);
 			Rand2= (int) ((Random.value * Size.y)%Size.y);
+			float enemySpawnHight =-0.5f;
 			//Debug.Log(i);
 			//NumberOfRooms
 			//roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2
@@ -740,7 +741,7 @@ public class createMazeNew : MonoBehaviour {
 						i--;
 					}
 					else{
-						Instantiate(Enemy2, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
+						Instantiate(Enemy2, new Vector3(Rand1*2,enemySpawnHight,Rand2*2),Quaternion.identity);
 					}
 				}
 				else if(i%7==0)
@@ -750,7 +751,7 @@ public class createMazeNew : MonoBehaviour {
 						i--;
 					}
 					else{
-						Instantiate(Enemy3, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
+						Instantiate(Enemy3, new Vector3(Rand1*2,enemySpawnHight,Rand2*2),Quaternion.identity);
 					}
 				}
 				else
@@ -760,7 +761,7 @@ public class createMazeNew : MonoBehaviour {
 						i--;
 					}
 					else{
-						Instantiate(Enemy1, new Vector3(Rand1*2,0,Rand2*2),Quaternion.identity);
+						Instantiate(Enemy1, new Vector3(Rand1*2,enemySpawnHight,Rand2*2),Quaternion.identity);
 					}
 				}
 			}

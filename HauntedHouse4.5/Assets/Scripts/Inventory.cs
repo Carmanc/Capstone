@@ -89,11 +89,22 @@ public class Inventory : MonoBehaviour {
 				if (slots[i].itemName != null)
 				{
 					GUI.DrawTexture(slotRect, slots[i].itemIcon);
+					if(Input.GetKeyUp(KeyCode.Return)){
+
+						Debug.Log("Enter");
+						if (item.itemType == Items.ItemType.Consumable)
+						{
+							UseConsumable(slots[i], i, true);
+						}
+
+					}
 					//event method
 					if (slotRect.Contains(e.mousePosition))
 					{
 						CreateTooltip(slots[i]);
 						showTooltip =true;
+
+
 						if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem) //0:left mouse button
 						{
 							draggingItem = true;
@@ -116,6 +127,14 @@ public class Inventory : MonoBehaviour {
 								UseConsumable(slots[i], i, true);
 							}
 						}
+						/*if (Event.current.Equals(Event.KeyboardEvent("[enter]")))
+						{
+							print ("clicked" + i);
+							if (item.itemType == Items.ItemType.Consumable)
+							{
+								UseConsumable(slots[i], i, true);
+							}
+						}*/
 					}
 				}
 				else{

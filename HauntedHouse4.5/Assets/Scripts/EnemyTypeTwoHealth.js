@@ -11,13 +11,12 @@ function ApplyDamage (TheDamage : int)
 	if (Health <= 0)
 	{
 		Dead(); //call function Dead()	
-	}
-
+	}	
 }
 
 function Dead()
-{
-	
+{	
 	animation.Play("die");
+	yield WaitForSeconds(2);
 	Destroy (gameObject);
 }

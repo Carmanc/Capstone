@@ -3,18 +3,18 @@ using System.Collections;
 
 public class move : MonoBehaviour {
 
-	public Transform transform1;
+	public Transform transform;
 	public float moveSpeed;
 	public bool canWalk;
 	public AnimationClip run;
 
-	public float maxDistance;
+	//public float maxDistance;
 	public float coolDownTimer;
 	public PlayerHealthBar ph;    //access playerHealthBar.cs
 	
 	public int damage;
 	
-	private Transform myTransform;
+	//public Transform myTransform;
 	public Transform target1;
 	
 	public AnimationClip attack;
@@ -27,10 +27,13 @@ public class move : MonoBehaviour {
 
 	public int initialDire = 0;
 	public int currentDire;
+
+	public float maxChaseRange = 5.0F;
+	public float minChaseRange = 3.0F;
+	public float maxAttackRange = 2.9F;
+
 	private int backStepCounter=0;
 	private bool backFlag=false;
-
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -38,14 +41,14 @@ public class move : MonoBehaviour {
 
 		GameObject go = GameObject.FindGameObjectWithTag("Player");
 		target1 = go.transform;
-		myTransform = transform;
-		maxDistance = 3;
+		//myTransform = transform;
+		//maxDistance = 3;
 		coolDownTimer = 0;
 		damage = -5;
 		
 		ph = (PlayerHealthBar)go.GetComponent (typeof(PlayerHealthBar));
 
-		currentDire = 3;
+		currentDire = 0;
 	}
 	
 	// Update is called once per frame
@@ -53,9 +56,10 @@ public class move : MonoBehaviour {
 	{
 		if (canWalk == true) 
 		{
-			transform1.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
+			transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
 			animation.CrossFade(run.name);
 		}
+
 		if(backStepCounter == 10)
 		{
 			canWalk=false;
@@ -69,15 +73,14 @@ public class move : MonoBehaviour {
 		{
 			backStepCounter++;
 		}
-		float distance = Vector3.Distance (target1.position, myTransform.position);
-		if (distance < maxDistance) {
+		if (inChaseRange ()) {
+						chasePlayer ();
+			
+				} else if (inAttackRange ()) {
 						attackPlayer ();
-						animation.CrossFade (attack.name);
+						//Debug.Log ("attack1");
 				} else {
-			transform.position = transform1.position;
-
 			canWalk = true;
-
 				}
 		
 		if (coolDownTimer > 0) 
@@ -92,6 +95,42 @@ public class move : MonoBehaviour {
 
 	}
 
+
+
+	void OnTriggerEnter (Collider other)
+	{
+		if (other.gameObject.tag == "Wall") 
+		{
+			
+			canWalk=false;
+			Backstep();
+			canWalk=true;
+		}
+	}
+
+	bool inChaseRange ()
+	{
+		if (Vector3.Distance (transform.position, target1.position) < maxChaseRange && Vector3.Distance (transform.position, target1.position) > minChaseRange) 
+		{
+			return true;
+		} 
+		else 
+		{
+			return false;
+		}
+	}
+
+	bool inAttackRange ()
+	{
+		if (Vector3.Distance (transform.position, target1.position) < maxAttackRange) 
+		{
+			return true;
+		} 
+		else 
+		{
+			return false;
+		}
+	}
 	void Backstep()
 	{
 		backStepCounter=0;
@@ -182,39 +221,31 @@ public class move : MonoBehaviour {
 		}
 		return temp;
 	}
-	void OnTriggerEnter (Collider other)
+	void chasePlayer ()
 	{
-		if (other.gameObject.tag == "Wall") 
-		{
-			Debug.Log ("w");
-
-
-			canWalk=false;
-			Backstep();
-			canWalk=true;
-
-			/*canWalk=false;
-			currentDire = pickDirection(currentDire);
-			turnNewDirection();
-			canWalk=true;*/
-			//walk forward
-			//transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
-		}
+		canWalk = false;
+		//lookat player
+		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(target1.position - transform.position), rotationSpeed * Time.deltaTime);
+		//move towards player
+		transform.position += transform.forward * moveSpeed * Time.deltaTime;
+		animation.CrossFade(run.name);
 	}
 
 	void attackPlayer ()
 	{
+		Debug.Log ("attack");
 		canWalk = false;
 		//lookat player
-		myTransform.rotation = Quaternion.Slerp (myTransform.rotation, Quaternion.LookRotation(target1.position - myTransform.position), rotationSpeed * Time.deltaTime);
+		//transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(target1.position - transform.position), rotationSpeed * Time.deltaTime);
 		//move towards player
-		myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-		Vector3 dir = Vector3.Normalize(target1.position - myTransform.position);
+		//transform.position += transform.forward * moveSpeed * Time.deltaTime;
+		Vector3 dir = Vector3.Normalize(target1.position - transform.position);
 		float direction = Vector3.Dot (dir, transform.forward);
 		if (direction > 0) //enemy is in front of us
 		{
 			if (coolDownTimer == 0) 
 			{
+				animation.CrossFade(attack.name);
 				ph.ChangeHealth (damage);
 				coolDownTimer = 3;
 			}

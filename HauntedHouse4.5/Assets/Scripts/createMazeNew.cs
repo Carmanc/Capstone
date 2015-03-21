@@ -736,7 +736,7 @@ public class createMazeNew : MonoBehaviour {
 				Maze[Rand1,Rand2,0]=false;
 				if(i%3==0)
 				{
-					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2 && roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2)
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2 || roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2)
 					{
 						i--;
 					}
@@ -746,7 +746,7 @@ public class createMazeNew : MonoBehaviour {
 				}
 				else if(i%7==0)
 				{
-					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2 || roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2)
 					{
 						i--;
 					}
@@ -756,7 +756,7 @@ public class createMazeNew : MonoBehaviour {
 				}
 				else
 				{
-					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2)
+					if(roomNodes[0].x < Rand1 && (roomNodes[0].x+roomNodes[0].z) > Rand1 && (roomNodes[0].y+roomNodes[0].z)> Rand2 && roomNodes[0].y < Rand2 || roomNodes[(NumberOfRooms-1)].x < Rand1 && (roomNodes[(NumberOfRooms-1)].x+roomNodes[(NumberOfRooms-1)].z) > Rand1 && (roomNodes[(NumberOfRooms-1)].y+roomNodes[(NumberOfRooms-1)].z)> Rand2 && roomNodes[(NumberOfRooms-1)].y < Rand2)
 					{
 						i--;
 					}

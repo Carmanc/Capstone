@@ -1,53 +1,53 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class move : MonoBehaviour {
+public class ZombiePatrol : MonoBehaviour {
 
 	public Transform transform;
 	public float moveSpeed;
 	public bool canWalk;
 	public AnimationClip run;
-
+	
 	//public float maxDistance;
 	public float coolDownTimer;
 	public PlayerHealthBar ph;    //access playerHealthBar.cs
 	
-	public int damage;
+	//public int damage;
 	
 	//public Transform myTransform;
 	public Transform target1;
 	
-	public AnimationClip attack;
-
+	//public AnimationClip attack;
+	
 	//public float Speed;
 	//public Vector3 Target;
 	//public Vector3 MoveDirection;
 	private int rotationSpeed = 1;
 	public float smooth = 2.0F;
-
+	
 	public int initialDire = 0;
 	public int currentDire;
-
-	public float maxChaseRange = 5.0F;
+	
+	/*public float maxChaseRange = 5.0F;
 	public float minChaseRange = 3.0F;
-	public float maxAttackRange = 2.9F;
-
+	public float maxAttackRange = 2.9F;*/
+	
 	private int backStepCounter=0;
 	private bool backFlag=false;
 	// Use this for initialization
 	void Start () 
 	{
 		canWalk = true;
-
+		
 		GameObject go = GameObject.FindGameObjectWithTag("Player");
 		target1 = go.transform;
 		//myTransform = transform;
 		//maxDistance = 3;
-		coolDownTimer = 0;
+		//coolDownTimer = 0;
 		//damage = -5;
 		
 		ph = (PlayerHealthBar)go.GetComponent (typeof(PlayerHealthBar));
-
+		
 		currentDire = 0;
 	}
 	
@@ -59,7 +59,7 @@ public class move : MonoBehaviour {
 			transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
 			animation.CrossFade(run.name);
 		}
-
+		
 		if(backStepCounter == 10)
 		{
 			canWalk=false;
@@ -73,15 +73,15 @@ public class move : MonoBehaviour {
 		{
 			backStepCounter++;
 		}
-		if (inChaseRange ()) {
-						chasePlayer ();
+		/*if (inChaseRange ()) {
+			chasePlayer ();
 			
-				} else if (inAttackRange ()) {
-						attackPlayer ();
-						//Debug.Log ("attack1");
-				} else {
+		} else if (inAttackRange ()) {
+			attackPlayer ();
+			//Debug.Log ("attack1");
+		} else {
 			canWalk = true;
-				}
+		}
 		
 		if (coolDownTimer > 0) 
 		{
@@ -91,12 +91,12 @@ public class move : MonoBehaviour {
 		if (coolDownTimer < 0) 
 		{
 			coolDownTimer = 0;
-		}
-
+		}*/
+		
 	}
-
-
-
+	
+	
+	
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.gameObject.tag == "Wall") 
@@ -107,8 +107,8 @@ public class move : MonoBehaviour {
 			canWalk=true;
 		}
 	}
-
-	bool inChaseRange ()
+	
+	/*bool inChaseRange ()
 	{
 		if (Vector3.Distance (transform.position, target1.position) < maxChaseRange && Vector3.Distance (transform.position, target1.position) > minChaseRange) 
 		{
@@ -119,7 +119,7 @@ public class move : MonoBehaviour {
 			return false;
 		}
 	}
-
+	
 	bool inAttackRange ()
 	{
 		if (Vector3.Distance (transform.position, target1.position) < maxAttackRange) 
@@ -130,7 +130,7 @@ public class move : MonoBehaviour {
 		{
 			return false;
 		}
-	}
+	}*/
 	void Backstep()
 	{
 		backStepCounter=0;
@@ -171,7 +171,7 @@ public class move : MonoBehaviour {
 				
 			}
 		}
-
+		
 	}
 	void turnNewDirection()
 	{
@@ -221,7 +221,7 @@ public class move : MonoBehaviour {
 		}
 		return temp;
 	}
-	void chasePlayer ()
+	/*void chasePlayer ()
 	{
 		canWalk = false;
 		//lookat player
@@ -229,9 +229,9 @@ public class move : MonoBehaviour {
 		//move towards player
 		transform.position += transform.forward * moveSpeed * Time.deltaTime;
 		animation.CrossFade(run.name);
-	}
-
-	void attackPlayer ()
+	}*/
+	
+	/*void attackPlayer ()
 	{
 		Debug.Log ("attack");
 		canWalk = false;
@@ -252,6 +252,5 @@ public class move : MonoBehaviour {
 		}
 		
 		
-	}
-
+	}*/
 }

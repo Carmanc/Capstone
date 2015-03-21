@@ -360,8 +360,8 @@ GameObject:
   - 143: {fileID: 14300000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: EnemyZombieDone 1
   m_TagString: Enemy
@@ -821,25 +821,22 @@ MonoBehaviour:
   WalkOffset: {fileID: 7400002, guid: 0dc5e69150e35074f960d9750a6b00c2, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d99eee0fb573794fb9be26d6c69e98e, type: 3}
+  m_Script: {fileID: 11500000, guid: 25061cc106b60e447975a1e0cf15763f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform1: {fileID: 400046}
-  moveSpeed: .600000024
-  canWalk: 1
+  transform: {fileID: 400046}
+  moveSpeed: .5
+  canWalk: 0
   run: {fileID: 7400002, guid: 0dc5e69150e35074f960d9750a6b00c2, type: 3}
-  maxDistance: 0
   coolDownTimer: 0
   ph: {fileID: 0}
-  damage: 0
   target1: {fileID: 0}
-  attack: {fileID: 0}
   smooth: 2
   initialDire: 0
   currentDire: 0

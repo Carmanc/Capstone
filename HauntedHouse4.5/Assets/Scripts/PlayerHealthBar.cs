@@ -29,10 +29,13 @@ public class PlayerHealthBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		//maxHealth=HealthLevelTransfer.Instance.getHealth();
 		currentHealth = maxHealth;
 		currentLife = maxLife;
 
 		hbLength = Screen.width / 2;
+
+		ChangeHealth(((HealthLevelTransfer.Instance.getHealth())-maxHealth));
 
 	}
 	
@@ -60,6 +63,7 @@ public class PlayerHealthBar : MonoBehaviour {
 		if (currentHealth > 0) 
 		{
 			currentHealth += health;
+			HealthLevelTransfer.Instance.setHealth(currentHealth);
 			hbLength = (Screen.width / 2) * (currentHealth / (float)maxHealth);
 				
 		} else 
@@ -74,10 +78,12 @@ public class PlayerHealthBar : MonoBehaviour {
 	//add health to player
 	public void ChangeHealth1 (int health)
 	{
-		if (currentHealth < 100) {
+		if (currentHealth < /*100*/maxHealth) {
 						currentHealth += health;
+						HealthLevelTransfer.Instance.setHealth(currentHealth);
 				} else {
 			currentHealth = maxHealth;
+			HealthLevelTransfer.Instance.setHealth(currentHealth);
 				}
 		hbLength = (Screen.width / 2) * (currentHealth / (float)maxHealth);
 		

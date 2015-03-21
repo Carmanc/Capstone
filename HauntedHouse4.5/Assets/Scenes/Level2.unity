@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e66d96ef17f2745a50ce7e51e1056d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 1
+  levelNumber: 2
   Floor: {fileID: 400000, guid: 51d1d2fd55b2d489f8e9abf3dce98a4f, type: 2}
-  Player: {fileID: 400144, guid: 28b1857aa966d4f42a57d24a061e6fd5, type: 2}
-  End: {fileID: 400020, guid: 2045e684f81babe4a9f69c3881eaff6f, type: 2}
+  Player: {fileID: 400144, guid: af6844a82b55d4950a45bf54d7774746, type: 2}
+  End: {fileID: 400020, guid: bdc7fc9667d1509468dc1298f941faca, type: 2}
   WallUnit: {fileID: 400000, guid: 71ba135200d02594caee507f179d7d67, type: 2}
   doorUnit: {fileID: 400006, guid: 21b08df821ac866489c28eea7eaa7ddc, type: 2}
   doorUnitUp: {fileID: 400006, guid: bdff9eff9d7c8234b8bdb82adfc0490e, type: 2}
@@ -256,15 +256,15 @@ MonoBehaviour:
   StartRoom4x4: {fileID: 0}
   StartRoom5x5: {fileID: 0}
   SingleSideUnit: {fileID: 0}
-  NumberOfEnemies: 5
-  Size: {x: 40, y: 40}
-  NumberOfRooms: 6
+  NumberOfEnemies: 9
+  Size: {x: 50, y: 50}
+  NumberOfRooms: 9
   Enemy1: {fileID: 400020, guid: fc4a3d6fa32e34218b5900c2c6c13895, type: 2}
-  Enemy2: {fileID: 400020, guid: fc4a3d6fa32e34218b5900c2c6c13895, type: 2}
-  Enemy3: {fileID: 400020, guid: fc4a3d6fa32e34218b5900c2c6c13895, type: 2}
+  Enemy2: {fileID: 400100, guid: eaf951f65afa0de4b86d3496cbecb073, type: 2}
+  Enemy3: {fileID: 400072, guid: 39213448fa0844825a6478fa7f9e9775, type: 2}
   roomSize: {x: 6, y: 0}
   numberOfConnections: 2
-  numPillsToAddToMaze: 5
+  numPillsToAddToMaze: 7
 --- !u!4 &1968447141
 Transform:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ AudioSource:
   m_GameObject: {fileID: 1968447139}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 17d12be924d8d044180091730d633679, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2b45cfcc9a9a14943b20b74b634dc42e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .119999997
   m_Pitch: 1

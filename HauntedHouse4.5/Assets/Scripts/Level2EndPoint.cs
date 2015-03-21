@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class Level2EndPoint : MonoBehaviour {
-
+	public GameObject gO;
 	// Use this for initialization
 	void Start () {
-		
+		gO = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -18,7 +18,9 @@ public class Level2EndPoint : MonoBehaviour {
 			//Debug.Log("isWorking");
 			double temp =System.DateTime.Now.Millisecond;
 			GameTimer.Instance.setEnd2(temp);
-			Application.LoadLevel(3);
+			
+			Application.LoadLevel(8);
+			
 		}
 		
 	}
@@ -28,7 +30,9 @@ public class Level2EndPoint : MonoBehaviour {
 			//Debug.Log("isWorking2");
 			double temp =System.DateTime.Now.Millisecond;
 			GameTimer.Instance.setEnd2(temp);
-			Application.LoadLevel(3);
+			
+			Application.LoadLevel(8);
+			
 		}
 	}
 }

@@ -19,7 +19,7 @@ public class Level1EndLogic : MonoBehaviour {
 			double temp =System.DateTime.Now.Millisecond;
 			GameTimer.Instance.setEnd1(temp);
 
-			Application.LoadLevel(3);
+			Application.LoadLevel(6);
 
 		}
 		
@@ -31,7 +31,7 @@ public class Level1EndLogic : MonoBehaviour {
 			double temp =System.DateTime.Now.Millisecond;
 			GameTimer.Instance.setEnd1(temp);
 
-			Application.LoadLevel(3);
+			Application.LoadLevel(6);
 
 		}
 	}

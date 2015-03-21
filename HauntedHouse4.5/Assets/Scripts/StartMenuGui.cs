@@ -6,7 +6,7 @@ public class StartMenuGui : MonoBehaviour {
 	void start()
 	{
 		GameTimer.Instance.resetTimers();
-
+		HealthLevelTransfer.Instance.resetHealth();
 		//Screen.showCursor = true;
 		//reset=false;
 	}

@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class Level3EndPoint : MonoBehaviour {
+	public GameObject gO;
 	// Use this for initialization
 	void Start () {
-		
+		gO = GameObject.FindGameObjectWithTag("Player");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		

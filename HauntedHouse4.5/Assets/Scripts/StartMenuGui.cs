@@ -5,8 +5,7 @@ public class StartMenuGui : MonoBehaviour {
 	private bool reset = false;
 	void start()
 	{
-		GameTimer.Instance.resetTimers();
-		HealthLevelTransfer.Instance.resetHealth();
+
 		//Screen.showCursor = true;
 		//reset=false;
 	}
@@ -31,6 +30,8 @@ public class StartMenuGui : MonoBehaviour {
 	{
 		Screen.lockCursor = true;
 		Screen.showCursor = false;
+		GameTimer.Instance.resetTimers();
+		HealthLevelTransfer.Instance.resetHealth();
 		/*if(!reset)
 		{
 			resetTimers();

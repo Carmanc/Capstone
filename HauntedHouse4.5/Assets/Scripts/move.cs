@@ -73,7 +73,7 @@ public class move : MonoBehaviour {
 		{
 			backStepCounter++;
 		}
-		if (inChaseRange ()) {
+		if (inChaseRange ()/* && !Physics.Raycast(transform.localPosition,target1.localPosition,maxChaseRange)*/) {
 						chasePlayer ();
 			
 				} else if (inAttackRange ()) {

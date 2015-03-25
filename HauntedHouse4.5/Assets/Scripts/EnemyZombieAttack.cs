@@ -37,11 +37,11 @@ public class EnemyZombieAttack : MonoBehaviour {
 	{
 		float distance = Vector3.Distance (target.position, myTransform.position);
 
-		if (distance < maxDistance) 
+		if (distance < maxDistance && !Physics.Raycast(myTransform.localPosition,target.localPosition,maxDistance)) 
 		{
 			drawGUI = true;
 			attackPlayer ();
-			Debug.Log ("working");
+			//Debug.Log ("working");
 			animation.CrossFade(WalkOffset.name);
 		} 
 		else

@@ -17,6 +17,6 @@ function ApplyDamage (TheDamage : int)
 function Dead()
 {	
 	animation.Play("die");
-	yield WaitForSeconds(2);
+	yield WaitForSeconds(1);
 	Destroy (gameObject);
 }

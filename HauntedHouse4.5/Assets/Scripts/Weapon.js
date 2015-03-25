@@ -1,8 +1,8 @@
 ﻿#pragma strict
 
-var Thedamage : int = 50;
+var Thedamage : int;
 var Distance : float;
-var MaxDistance : float = 1.5;
+var MaxDistance : float = 2.5;
 var TheAnimator : Animator;
 var DamageDelay : float = 0.6;
 

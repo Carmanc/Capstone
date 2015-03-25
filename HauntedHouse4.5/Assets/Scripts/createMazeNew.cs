@@ -45,7 +45,8 @@ public class createMazeNew : MonoBehaviour {
 	private Vector2 StartPoint;
 	private Vector2 mazeEndPoint;
 	
-	private bool[,,] Maze;
+	//private bool[,,] Maze;
+	public bool[,,] Maze;
 	private Vector3[] roomNodes;//x is x cordinate, y is y cordinate, z is size
 	private bool[,] Connection;
 	private Object usedPlayer;
@@ -64,7 +65,7 @@ public class createMazeNew : MonoBehaviour {
 		SettingsSingleton.Instance.applySound();
 	}
 	
-	void CreateBoolMaze()
+    public void CreateBoolMaze()
 	{
 		setUpMazeBorder();
 		Connection = new bool [NumberOfRooms,NumberOfRooms];

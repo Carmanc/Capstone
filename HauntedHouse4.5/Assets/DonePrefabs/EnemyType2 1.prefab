@@ -780,6 +780,8 @@ GameObject:
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 65: {fileID: 6500000}
+  - 54: {fileID: 5400000}
   m_Layer: 0
   m_Name: EnemyType2 1
   m_TagString: Enemy
@@ -1442,8 +1444,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.34927654, y: .358810186, z: 20.4113083}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 21.8557549, y: -.87206316, z: 56.9831352}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 400098}
   - {fileID: 400096}
@@ -1704,6 +1706,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100046}
   m_Mesh: {fileID: 4300000, guid: 5f793c01f35768047af11fb9124a146f, type: 3}
+--- !u!54 &5400000
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: 1, z: .400000006}
+  m_Center: {x: 0, y: .529999971, z: 0}
 --- !u!111 &11100000
 Animation:
   m_ObjectHideFlags: 1
@@ -1793,7 +1822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transform: {fileID: 400100}
-  moveSpeed: 1
+  moveSpeed: .699999988
   canWalk: 0
   run: {fileID: 7400004, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   coolDownTimer: 0
@@ -1805,8 +1834,8 @@ MonoBehaviour:
   initialDire: 0
   currentDire: 0
   maxChaseRange: 5
-  minChaseRange: 3
-  maxAttackRange: 2.9000001
+  minChaseRange: 1.89999998
+  maxAttackRange: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
